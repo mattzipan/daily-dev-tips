@@ -54,7 +54,7 @@ Let's see how that would look like:
 
 ```html
 <div class="flex items-center justify-center h-screen">
-  Centered using Tailwind Grid
+  Centered using Tailwind Flex
 </div>
 ```
 
