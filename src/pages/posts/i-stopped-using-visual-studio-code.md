@@ -107,3 +107,5 @@ The obvious con is that it's a paid product compared to VSC, which is free.
 ### Thank you for reading, and let's connect!
 
 Thank you for reading my blog. Feel free to subscribe to my email newsletter and connect on [Facebook](https://www.facebook.com/DailyDevTipsBlog) or [Twitter](https://twitter.com/DailyDevTips1)
+
+Adding thoughts on approach is always welcome from readers.
