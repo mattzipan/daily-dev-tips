@@ -1,10 +1,10 @@
 ---
 layout: ../../layouts/Post.astro
-title: '8 Google Analytics privacy focussed alternatives'
-metaTitle: '8 Google Analytics privacy focussed alternatives'
-metaDesc: 'Here are 8 privacy focussed alternatives to Google Analytics'
+title: '9 Google Analytics privacy focussed alternatives'
+metaTitle: '9 Google Analytics privacy focussed alternatives'
+metaDesc: 'Here are 9 privacy focussed alternatives to Google Analytics'
 image: /images/18-03-2022.jpg
-date: 2022-03-18T03:00:00.000Z
+date: 2022-10-19T03:00:00.000Z
 tags:
   - developer
 ---
@@ -160,22 +160,34 @@ Or
 
 [View Fathom demo dashboard](https://app.usefathom.com/share/deasaicp/hilarious+platypus#/?filters=%5B%5D&range=last_7_days&site=114903)
 
+## Wide Angle Analytics
+
+Wide Angle Analytics is web analytics Made in Germany and fully hosted in the EU on European Cloud. 
+
+One of the few SaaS web analytics platforms that support cookieless and cookie-enabled tracking explicitly allows the processing of Personal Data.
+
+Easy to start, with bold design and colours.
+
+The basic plan starts from €9.99pcm or €99pa and goes up depending on your needs.
+
+[Wide Angle Analytics](https://wideangle.co)
+
 ## Comparison
 
-|                         | Matomo  | GoatCounter | Fair   | Simple | Unami | Plausible | Fathom |
-| ----------------------- | ------- | ----------- | ------ | ------ | ----- | --------- | ------ |
-| Price (entry-level)     | free    | free        | 2,2$/M | 9$/M   | free  | 12$/M     | 14$/M  |
-| Price (1M page-views)   | 180$/M  | 34$/M       | 11$/M  | 49$/M  | free  | 92$/M     | 54$/M  |
-| Current visitors        | ✅      | ✅          | ✅     | ✅     | ✅    | ✅        | ✅     |
-| Unique visitors         | ✅      | ❌          | ❌     | ❌     | ❌    | ✅        | ✅     |
-| Total pageviews         | ✅      | ✅          | ✅     | ✅     | ✅    | ✅        | ✅     |
-| Bounce rate             | ✅      | ❌          | ❌     | ❌     | ✅    | ✅        | ✅     |
-| Bundle size             | 22.8 KB | ~3.5KB      | ?      | ?      | ?     | ~1 KB     | ~1 KB  |
-| API                     | ✅      | ❌          | ?      | ✅     | ✅    | ✅        | ✅     |
-| Google Analytics Import | ✅      | ❌          | ❌     | ❌     | ❌    | 📍        | 📍     |
-| Custom domain           | ❌      | ❌          | ❌     | ❌     | ✅    | ✅        | ✅     |
-| Open source             | ✅      | ✅          | ❌     | ❌     | ✅    | ✅        | ✅     |
-| Goals/Events            | ✅      | ✅          | ✅     | ✅     | ✅    | ✅        | ✅     |
+|                         | Matomo  | GoatCounter | Fair   | Simple | Unami | Plausible | Fathom | Wide Angle |
+| ----------------------- | ------- | ----------- | ------ | ------ | ----- | --------- | ------ | ---------- |
+| Price (entry-level)     | free    | free        | 2,2$/M | 9$/M   | free  | 12$/M     | 14$/M  | €9.99/M
+| Price (1M page-views)   | 180$/M  | 34$/M       | 11$/M  | 49$/M  | free  | 92$/M     | 54$/M  | €29.99/M   |
+| Current visitors        | ✅      | ✅          | ✅     | ✅     | ✅    | ✅        | ✅     | ✅     | 
+| Unique visitors         | ✅      | ❌          | ❌     | ❌     | ❌    | ✅        | ✅     | ✅     |
+| Total pageviews         | ✅      | ✅          | ✅     | ✅     | ✅    | ✅        | ✅     | ✅     |
+| Bounce rate             | ✅      | ❌          | ❌     | ❌     | ✅    | ✅        | ✅     | ✅     |
+| Bundle size             | 22.8 KB | ~3.5KB       | ?      | ?      | ?     | ~1 KB     | ~1 KB  | ~16 KB | 
+| API                     | ✅      | ❌          | ?      | ✅     | ✅    | ✅        | ✅     | ❌ | 
+| Google Analytics Import | ✅      | ❌          | ❌     | ❌     | ❌    | 📍        | 📍     |❌ | 
+| Custom domain           | ❌      | ❌          | ❌     | ❌     | ✅    | ✅        | ✅     |✅ |
+| Open source             | ✅      | ✅          | ❌     | ❌     | ✅    | ✅        | ✅     |❌ |
+| Goals/Events            | ✅      | ✅          | ✅     | ✅     | ✅    | ✅        | ✅     |✅ |
 
 The 📍 represent roadmap tasks and will be added soon.
 
