@@ -30,7 +30,7 @@ export async function get() {
       content: post.metaDesc,
       link: `https://daily-dev-tips.com${post.url}`,
       id: `https://daily-dev-tips.com${post.url}`,
-      date: new Date(post.date),
+      date: new Date(post.modifiedDate || post.date),
     });
   });
 
