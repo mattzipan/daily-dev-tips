@@ -15,7 +15,9 @@ const tmpUrl = `https://daily-dev-tips.com${canonicalURL.pathname}`;
 const articleDate = new Date(content.date);
 const isoDate = articleDate.toISOString();
 // modified date falls back to iso date for posts where modified date is not defined
-const modifiedDate = new Date(content.modifiedDate).toISOString() || isoDate;
+const modifiedDate = new Date(
+  content.modifiedDate || content.date
+).toISOString();
 ---
 
 <BaseLayout
