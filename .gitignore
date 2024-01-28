@@ -17,3 +17,6 @@ yarn-error.log*
 # macOS-specific files
 .DS_Store
 snowpack.config.mjs
+
+# cache
+_cache/
