@@ -1,19 +1,21 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Article from '../components/Article.astro';
-import Subscribe from '../components/Subscribe.astro';
-import Ads from '../components/Ads.astro';
-import Tag from '../components/Tag.astro';
-import Stats from '../components/Stats.astro';
-import Webmentions from '../components/Webmentions.astro';
-import RelatedArticles from '../components/RelatedArticles.astro';
-import { dateFilter } from '../lib/dateFilter.js';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Article from "../components/Article.astro";
+import Subscribe from "../components/Subscribe.astro";
+import Ads from "../components/Ads.astro";
+import Tag from "../components/Tag.astro";
+import Stats from "../components/Stats.astro";
+import Webmentions from "../components/Webmentions.astro";
+import RelatedArticles from "../components/RelatedArticles.astro";
+import { dateFilter } from "../lib/dateFilter.js";
 const { content } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const mdURL = canonicalURL.pathname.replace(/\/$/, '.md');
+const mdURL = canonicalURL.pathname.replace(/\/$/, ".md");
 const tmpUrl = `https://daily-dev-tips.com${canonicalURL.pathname}`;
 const articleDate = new Date(content.date);
 const isoDate = articleDate.toISOString();
+// modified date falls back to iso date for posts where modified date is not defined
+const modifiedDate = new Date(content.modifiedDate).toISOString() || isoDate;
 ---
 
 <BaseLayout
@@ -22,40 +24,39 @@ const isoDate = articleDate.toISOString();
   image={content.ogImage ?? content.image}
   post={true}
   date={isoDate}
+  modifiedDate={modifiedDate}
 >
-  <header class='container mx-auto my-6 text-center'>
+  <header class="container mx-auto my-6 text-center">
     <h1
-      class='inline px-2 text-3xl font-bold text-white break-words bg-purple-600 rounded-md box-decoration-clone'
+      class="inline px-2 text-3xl font-bold text-white break-words bg-purple-600 rounded-md box-decoration-clone"
       set:html={content.title}
-    >
-    </h1>
-    <Webmentions url={tmpUrl} type='overlap' />
+    />
+    <Webmentions url={tmpUrl} type="overlap" />
   </header>
 
   <section
-    class='flex flex-col py-6 mb-6 -mx-4 bg-white border-t border-b border-gray-200 dark:bg-dark dark:border-slate-700 md:pb-10'
+    class="flex flex-col py-6 mb-6 -mx-4 bg-white border-t border-b border-gray-200 dark:bg-dark dark:border-slate-700 md:pb-10"
   >
-    <div class='container mx-auto'>
+    <div class="container mx-auto">
       <Ads />
       <div
-        class='flex flex-1 py-6 mx-4 my-6 bg-indigo-50 dark:bg-slate-300 rounded-xl'
+        class="flex flex-1 py-6 mx-4 my-6 bg-indigo-50 dark:bg-slate-300 rounded-xl"
       >
-        <p class='px-4'>✍️</p>
+        <p class="px-4">✍️</p>
         <div>
           <p
-            class='pr-6 mb-2'
+            class="pr-6 mb-2"
             set:html={content.tldr ? content.tldr : content.metaDesc}
-          >
-          </p>
+          />
           <strong
-            class='flex flex-wrap items-center font-semibold text-gray-600'
+            class="flex flex-wrap items-center font-semibold text-gray-600"
             >{dateFilter(content.date)} ·<svg
-              xmlns='http://www.w3.org/2000/svg'
-              fill='currentColor'
-              class='w-5 h-5 ml-1 mr-1'
-              viewBox='0 0 32 32'
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              class="w-5 h-5 ml-1 mr-1"
+              viewBox="0 0 32 32"
               ><path
-                d='M 3 6 L 3 25 L 13 25 C 14.101563 25 15 25.898438 15 27 L 17 27 C 17 25.898438 17.898438 25 19 25 L 29 25 L 29 6 L 19 6 C 17.808594 6 16.734375 6.527344 16 7.359375 C 15.265625 6.527344 14.191406 6 13 6 Z M 5 8 L 13 8 C 14.101563 8 15 8.898438 15 10 L 17 10 C 17 8.898438 17.898438 8 19 8 L 27 8 L 27 23 L 19 23 C 17.808594 23 16.734375 23.527344 16 24.359375 C 15.265625 23.527344 14.191406 23 13 23 L 5 23 Z M 15 12 L 15 14 L 17 14 L 17 12 Z M 15 16 L 15 18 L 17 18 L 17 16 Z M 15 20 L 15 22 L 17 22 L 17 20 Z'
+                d="M 3 6 L 3 25 L 13 25 C 14.101563 25 15 25.898438 15 27 L 17 27 C 17 25.898438 17.898438 25 19 25 L 29 25 L 29 6 L 19 6 C 17.808594 6 16.734375 6.527344 16 7.359375 C 15.265625 6.527344 14.191406 6 13 6 Z M 5 8 L 13 8 C 14.101563 8 15 8.898438 15 10 L 17 10 C 17 8.898438 17.898438 8 19 8 L 27 8 L 27 23 L 19 23 C 17.808594 23 16.734375 23.527344 16 24.359375 C 15.265625 23.527344 14.191406 23 13 23 L 5 23 Z M 15 12 L 15 14 L 17 14 L 17 12 Z M 15 16 L 15 18 L 17 18 L 17 16 Z M 15 20 L 15 22 L 17 22 L 17 20 Z"
               ></path>
             </svg>
             {content.readingTime}
@@ -64,14 +65,14 @@ const isoDate = articleDate.toISOString();
       </div>
 
       <article
-        class='mx-4 prose prose-lg md:prose-xl dark:prose-invert md:mx-auto'
+        class="mx-4 prose prose-lg md:prose-xl dark:prose-invert md:mx-auto"
       >
         <slot />
-        <div class='text-right'>
+        <div class="text-right">
           <a
             href=`https://github.com/rebelchris/daily-dev-tips/edit/master/src/pages${mdURL}`
-            target='_blank'
-            rel='noreferrer noopener'
+            target="_blank"
+            rel="noreferrer noopener"
             >🛠 Edit on GitHub
           </a>
         </div>
@@ -80,69 +81,69 @@ const isoDate = articleDate.toISOString();
   </section>
 
   <section
-    class='container px-4 py-6 mx-auto mb-10 bg-white rounded-xl dark:bg-dark'
+    class="container px-4 py-6 mx-auto mb-10 bg-white rounded-xl dark:bg-dark"
   >
-    <div class='mb-4 text-lg font-medium dark:text-white'>
-      Spread the knowledge <span class='text-gray-500 dark:text-gray-400'
+    <div class="mb-4 text-lg font-medium dark:text-white">
+      Spread the knowledge <span class="text-gray-500 dark:text-gray-400"
         >with fellow developers on Twitter
       </span>
     </div>
     <a
       href=`https://twitter.com/intent/tweet/?text=Chris%20wrote%20this%20amazing%20article&url=${tmpUrl}&via=DailyDevTips1`
-      target='_blank'
-      rel='noopener noreferrer'
-      class='bg-[#1d9bf0] hover:bg-blue-400 transition-colors text-white p-3 rounded-xl text-sm inline-flex items-center'
+      target="_blank"
+      rel="noopener noreferrer"
+      class="bg-[#1d9bf0] hover:bg-blue-400 transition-colors text-white p-3 rounded-xl text-sm inline-flex items-center"
       ><svg
-        xmlns='http://www.w3.org/2000/svg'
-        width='16'
-        height='16'
-        viewBox='0 0 24 24'
-        fill='none'
-        stroke='currentColor'
-        stroke-width='2'
-        stroke-linecap='round'
-        stroke-linejoin='round'
-        class='mr-2'
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="mr-2"
         ><path
-          d='M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z'
+          d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
         ></path>
       </svg> Tweet this tip
     </a>
     <Webmentions url={tmpUrl} offsetLabel={false} />
-    <div class='flex items-center text-xs text-gray-500'>
+    <div class="flex items-center text-xs text-gray-500">
       <svg
-        xmlns='http://www.w3.org/2000/svg'
-        class='w-4 h-4 mr-1'
-        fill='none'
-        viewBox='0 0 24 24'
-        stroke='currentColor'
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-4 h-4 mr-1"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
       >
         <path
-          stroke-linecap='round'
-          stroke-linejoin='round'
-          stroke-width='2'
-          d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
       </svg> Powered by Webmentions - <a
-        href='/posts/goodbye-comments-welcome-webmentions/'
-        class='font-medium text-barbie hover:underline underline-offset-2'
-        target='_blank'
+        href="/posts/goodbye-comments-welcome-webmentions/"
+        class="font-medium text-barbie hover:underline underline-offset-2"
+        target="_blank"
         >Learn more
       </a>
     </div>
   </section>
   <section
-    class='border-gray-200 md:bg-white md:dark:bg-dark md:-mx-4 border-top-0 md:border-t md:dark:border-slate-700 md:pt-8'
+    class="border-gray-200 md:bg-white md:dark:bg-dark md:-mx-4 border-top-0 md:border-t md:dark:border-slate-700 md:pt-8"
   >
-    <div class='container mx-auto'>
+    <div class="container mx-auto">
       <h2
-        class='mb-2 text-sm tracking-wider text-gray-700 uppercase md:normal-case dark:text-white md:mb-0 md:text-2xl md:font-bold'
+        class="mb-2 text-sm tracking-wider text-gray-700 uppercase md:normal-case dark:text-white md:mb-0 md:text-2xl md:font-bold"
       >
         Read next 📖
       </h2>
     </div>
   </section>
-  <section class='-mx-4 md:bg-white md:dark:bg-dark md:pt-8'>
-    <div class='container mx-auto'>
+  <section class="-mx-4 md:bg-white md:dark:bg-dark md:pt-8">
+    <div class="container mx-auto">
       <RelatedArticles
         tags={content.tags}
         currentPathname={canonicalURL.pathname}
@@ -151,22 +152,22 @@ const isoDate = articleDate.toISOString();
   </section>
 
   <section
-    class='mb-10 -mx-4 bg-white border-t border-b border-gray-200 dark:bg-dark md:border-t-0 dark:border-slate-700'
+    class="mb-10 -mx-4 bg-white border-t border-b border-gray-200 dark:bg-dark md:border-t-0 dark:border-slate-700"
   >
     <div
-      class='container flex col-span-1 px-4 py-4 mx-auto md:px-0 md:col-span-2'
+      class="container flex col-span-1 px-4 py-4 mx-auto md:px-0 md:col-span-2"
     >
-      <nav class='mb-2' aria-label='Tag'>
-        <h3 class='mb-4 text-xl font-medium leading-6 dark:text-white'>
+      <nav class="mb-2" aria-label="Tag">
+        <h3 class="mb-4 text-xl font-medium leading-6 dark:text-white">
           Discover more tips
         </h3>
-        <ul class='flex'>
+        <ul class="flex">
           {content.tags.map((tag) => <Tag tag={tag} />)}
         </ul>
       </nav>
     </div>
   </section>
-  <section class='mb-10'>
+  <section class="mb-10">
     <Subscribe />
     <Stats />
   </section>

@@ -6,6 +6,7 @@ metaDesc: 'Learn how to center a div in the middle of the screen vertically & ho
 ogImage: /images/25-06-2021.jpg
 image: https://daily-dev-tips.com/cdn-cgi/imagedelivery/Bki7Af2hq0JKVFw1XYYMQg/7debb9c6-2996-44d6-fe31-25ccc58c1200
 date: 2021-06-25T03:00:00.000Z
+modifiedDate: 2024-01-28T03:04:00.000Z
 top: true
 tags:
   - css

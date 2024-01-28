@@ -8,6 +8,7 @@ const {
   image,
   post,
   date,
+  modifiedDate,
   showSubscribe = true,
 } = Astro.props;
 const useImage = image ?? '/images/fallback.png';
@@ -56,7 +57,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
                                                              "@type": "NewsArticle",
                                                              "headline": "${title}",
                                                              "datePublished": "${date}",
-                                                             "dateModified": "${date}",
+                                                             "dateModified": "${modifiedDate}",
                                                              "image": "https://daily-dev-tips.com/images/logo.png",
                                                              "author": {
                                                                "@type": "Person",
