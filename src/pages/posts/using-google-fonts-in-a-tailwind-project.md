@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/Post.astro
-title: 'How to use Google Fonts in Tailwind CSS [2024]'
-metaTitle: 'Use a Google Font in Tailwind CSS'
+title: 'Use a Google Font in Tailwind CSS'
+metaTitle: 'How to use Google Fonts in Tailwind CSS [2024]'
 metaDesc: 'Tutorial to teach you how to add a Google font to Tailwind with live demo. Add a custom font family through the googleapis CDN.'
 image: /images/28-02-2021.jpg
 date: 2021-02-28T03:00:00.000Z
