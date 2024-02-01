@@ -4,7 +4,8 @@ title: 'Tailwind CSS: Gradient Text Color'
 metaTitle: 'Tailwind CSS: Gradient Text Color Tutorial [2024]'
 metaDesc: 'Learn how to add a linear gradient generator as text color with Tailwind CSS. Try the CodePen example demo.'
 image: /images/26-06-2021.jpg
-date: 2024-01-30T03:00:00.000Z
+date: 2021-06-26T03:00:00.000Z
+modifiedDate: 2024-01-30T03:00:00.000Z
 tags:
   - css
   - tailwind

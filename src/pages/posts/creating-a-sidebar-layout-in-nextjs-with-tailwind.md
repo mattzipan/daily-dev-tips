@@ -4,7 +4,8 @@ title: 'Next JS Sidebar Navigation with Tailwind CSS'
 metaTitle: 'Make a Next.js Sidebar Navigation with Tailwind [2024]'
 metaDesc: 'Responsive Next.js sidenav template: A tutorial with Tailwind CSS for a sleek sidebar navigation component. View the example code.'
 image: /images/31-01-2022.jpg
-date: 2024-02-01T03:00:00.000Z
+date: 2022-01-31T03:00:00.000Z
+modifiedDate: 2024-02-01T03:00:00.000Z
 tags:
   - nextjs
   - react
