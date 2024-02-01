@@ -1,26 +1,31 @@
 ---
 layout: ../../layouts/Post.astro
-title: 'Tailwind CSS full-screen video header'
-metaTitle: 'Full-screen background video with Tailwind CSS [2022]'
-metaDesc: 'Learn in this tutorial how to create a full-screen video background as a header element using only Tailwind CSS. See the Codepen demo.'
+title: 'Tailwind CSS: Video Background'
+metaTitle: 'Background Video with Tailwind CSS Tutorial [2024]'
+metaDesc: 'Create a full-screen video background header element with Tailwind CSS - Tutorial to integrate videos as background with Codepen demo.'
 image: /images/19-12-2020.jpg
 date: 2020-12-19T03:00:00.000Z
+modifiedDate: 2024-02-01T03:00:00.000Z
 tags:
   - css
   - tailwind
 ---
 
-Call me old-school, but I love to see video headers. I hardly use them on my personal website, but I love to implement a video header for clients with stunning videos.
+Call me old-school, but I love to see CSS **background video** headers.
 
-I want to teach you how to implement a full-screen background video in this tutorial. We will only use the classes of [Tailwind CSS](https://daily-dev-tips.com/posts/my-first-experiences-with-tailwind-css/).
+I hardly use such styles on my personal website, but I love to implement a **video header** for backgrounds on client sites to stun the viewer with videos.
 
-The result is this stunning full-screen video header using only Tailwind CSS:
+In this CSS tutorial I want to teach you how to implement a **full-screen background video** . We will only use the classes of [Tailwind CSS](https://daily-dev-tips.com/posts/my-first-experiences-with-tailwind-css/).
+
+The result is a stunning full-screen video background element using only Tailwind CSS:
 
 ![video-header.gif](https://cdn.hashnode.com/res/hashnode/image/upload/v1607940108457/esNeCkquB.gif)
 
-## Tailwind CSS full-screen video background
+## How to create a video background with Tailwind CSS
 
-To create this background, we are leveraging yesterday's [Tailwind parallax header](https://daily-dev-tips.com/posts/tailwind-css-parallax-effect/). It has a very similar setup, only now we don't make it parallax scroll.
+To create this **video player** as a background, we are leveraging yesterday's code from the tutorial about a [Tailwind parallax header](https://daily-dev-tips.com/posts/tailwind-css-parallax-effect/).
+
+The header element has a very similar setup, so we will re-use it for the background video effect.
 
 The basic `HTML` structure will look like this:
 
@@ -34,10 +39,11 @@ The basic `HTML` structure will look like this:
 </header>
 ```
 
-You can see we used an HTML header tag. There, we have a div that will hold a block that will sit on top of the video.
-Then we have a video tag, which can hold a video or multiple sources.
+You can see we used an HTML header tag. There, we have a `div` element that will hold a block that will sit on top of the `video` tag.
 
-I will now write down the end `HTML` structure and then go through the importance of each class.
+FYI the video tag can hold a video file but also other file formats.
+
+I will now write down the final `HTML` structure with CSS and go through the importance of each Tailwind class.
 
 ```html
 <header
@@ -63,7 +69,7 @@ I will now write down the end `HTML` structure and then go through the importanc
 </header>
 ```
 
-The classes used for the video background:
+The CSS classes used for the video background:
 
 - `relative`: Makes the header element relative. We will make the video absolute to position it.
 - `flex`: Adds a display flex so we can align the text block inside
@@ -75,7 +81,7 @@ The classes used for the video background:
 
 Then for our overlay text block, we use the following classes:
 
-- `relative`: We need to make this relative to place it on top of the video
+- `relative`: We need to make this relative to place it on top of the video embed
 - `z-30`: This needs to be higher than the z-index on the video
 - `p-5`: Adds equal padding on each side (1.25rem)
 - `text-2xl`: Makes the text nice and big (1.5rem)
@@ -87,13 +93,15 @@ Then for our overlay text block, we use the following classes:
 And last but not least, we can add the classes for our video element:
 
 - `absolute`: The video is an absolute positioned element
-- `z-10`: We give the video a lower z-index than our text-block to keep it in the background
+- `z-10`: We give the video a lower z-index than our text-block to keep the **video as background**
 - `w-auto`: The width can be auto so that it will adjust
 - `min-w-full`: We need to make the min-width 100%
 - `min-h-full`: The same goes for the min-height
 - `max-w-none`: Unset the default max-width
 
-With this, we have all our classes in place. This will give us a nice full-screen video header using only Tailwind CSS classes.
+With this, we have all our classes in place to create a CSS video background effect.
+
+The styling gives us a nice full-screen effect for the video header tag - using only Tailwind CSS classes.
 
 ### See the code example in this Codepen
 
