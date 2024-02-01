@@ -1,39 +1,47 @@
 ---
 layout: ../../layouts/Post.astro
-title: 'Creating a sidebar layout in Next.js with Tailwind'
-metaTitle: 'Creating a sidebar layout in Next.js with Tailwind'
-metaDesc: 'Learn how to make a sidebar layout in Next.js 12 using Tailwind v3'
+title: 'Next JS Sidebar Navigation with Tailwind CSS'
+metaTitle: 'Make a Next.js Sidebar Navigation with Tailwind [2024]'
+metaDesc: 'Responsive Next.js sidenav template: A tutorial with Tailwind CSS for a sleek sidebar navigation component. View the example code.'
 image: /images/31-01-2022.jpg
-date: 2022-01-31T03:00:00.000Z
+date: 2024-02-01T03:00:00.000Z
 tags:
   - nextjs
+  - react
   - tailwind
 ---
 
-We will create a website layout in Next.js powered by Tailwind CSS for all the styling.
+In this tutorial we will create a **sidebar navigation** for our **Next JS** website layout. We will use **Tailwind CSS** for all the styling.
 
-The main goal is to show you how to make a reusable layout and be able to navigate between the pages you created.
+The main goal is to show you how to make a **reusable component** for a site layout. The sidenav component will enable the user to navigate between pages of the web application.
 
-A showcase of the result:
-
+## Demo of what we will build
 <!-- ![Creating a sidebar layout in Next.js with Tailwind](https://cdn.hashnode.com/res/hashnode/image/upload/v1642834367343/n1ByKldm0.gif) -->
-<video autoplay loop muted playsinline>
+<video class="w-full" autoplay loop muted playsinline>
   <source src="https://res.cloudinary.com/daily-dev-tips/video/upload/v1642834394/next-sidebar_kotys7.webm" type="video/webm" />
   <source src="https://res.cloudinary.com/daily-dev-tips/video/upload/v1642834394/next-sidebar_lskuwp.mp4" type="video/mp4" />
 </video>
 
-## Setting up the Next.js sidebar project
+Feel free to review the source files and the demo <a href="https://stackblitz.com/~/github.com/dailydevtips/next-sidebar" target="_blank" >here on Stackblitz</a>.
 
-Start by setting up the project first, open your favorite terminal, and start a new Next.js project.
+## How to create a sidebar navigation in Next JS with Tailwind
+First, let's set up  the Next.js project.
+### Next.js sidebar project setup
+> Note: At the time of writing, I'm using Next JS v.12
 
-> Note: At the time of writing, this is Next 12
+  Open your favorite terminal, and start a new Next.js project with this line of code:
 
 ```bash
 npx create-next-app next-sidebar
 ```
 
-Then go into your project, and let's add Tailwind CSS.
-We'll be adding Tailwind v3. If you want to use v2, check out this article on [installing Tailwind in Next.js](https://daily-dev-tips.com/posts/setting-up-nextjs-with-tailwind-css/).
+Then, we'll navigate into the  project folder via terminal, and add Tailwind CSS.
+
+### Install Tailwind CSS in Next JS project
+We'll be adding the latest version of **Tailwind**.
+
+If you want to use Tailwind version 2, check out this article on [installing Tailwind in Next.js](https://daily-dev-tips.com/posts/setting-up-nextjs-with-tailwind-css/).
+
 
 ```bash
 # Install all the dependencies
@@ -43,13 +51,13 @@ npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
 npx tailwindcss init -p
 ```
 
-Add the following files to the `content` option.
+Then add the following files to the `content` option.
 
 ```js
 content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
 ```
 
-And the last step is to add the Tailwind stylesheets to our `styles/global.scss` file.
+And then the last step is to add the Tailwind stylesheets to our `styles/global.scss` file.
 
 ```css
 @import 'tailwindcss/base';
@@ -57,17 +65,19 @@ And the last step is to add the Tailwind stylesheets to our `styles/global.scss`
 @import 'tailwindcss/utilities';
 ```
 
-That's it. We are all set to start making the application.
+That's it. We are all set to start making the web application.
 
-## Adding all the pages
+### Create Pages for the Navigation
 
-For this article, we'll be building three pages:
+For this tutorial, we'll be building three pages:
 
 - Homepage
 - About
 - Contact
 
-Let's first change the homepage. You can remove everything inside the `index.js` file and replace it with the following.
+Let's first do the homepage.
+
+You can remove everything inside the `index.js` file and replace it with the following code:
 
 ```js
 export default function Home() {
@@ -80,7 +90,7 @@ export default function Home() {
 }
 ```
 
-Add a new file called `about.js` inside the `pages` directory and add the following code.
+Then add a new file called `about.js` inside the `pages` directory and add the following code:
 
 ```js
 export default function About() {
@@ -93,7 +103,7 @@ export default function About() {
 }
 ```
 
-And in the same way, add a `contact.js` file.
+Then, in the same way, add a `contact.js` file:
 
 ```js
 export default function Contact() {
@@ -106,17 +116,16 @@ export default function Contact() {
 }
 ```
 
-Now we have all our pages, at this point, you'll be able to run the script and see your basic pages.
+Now, we have all our pages created in the Next JS project and are ready to code **sidebar navigation**.
 
-However, were have no way of navigating between them.
 
-## Adding a sidebar layout in Next.js
+### Add sidebar navigation in Next.js
 
 We'll be using a [Next.js layout](https://daily-dev-tips.com/posts/creating-a-reusable-layout-in-nextjs/).
 
-This layout file will be our main wrapping element, and each page will be rendered as a child element.
+This layout template file will be our main wrapping element. Each page will be rendered as a child element.
 
-First, create a `components` directory in your project, and inside add a `layout.js` file.
+So, first, create a `components` directory in your project, and inside add a `layout.js` file.
 
 The global structure for this file looks like this:
 
@@ -128,7 +137,7 @@ export default function Layout({ children }) {
 }
 ```
 
-Now add this layout component in your `_app.js` file so it will be used:
+Now add the layout component in your `_app.js` file so it will run on the website:
 
 ```js
 import Layout from '../components/Layout';
@@ -142,7 +151,7 @@ function MyApp({ Component, pageProps }) {
 }
 ```
 
-Let's start by defining our elements. We want a header aside and the main section.
+Now let's define our navigation elements. We want a **header**, **aside** and a **main** section.
 
 ```html
 <div className="min-h-screen flex flex-col">
@@ -158,9 +167,11 @@ Let's start by defining our elements. We want a header aside and the main sectio
 </div>
 ```
 
-This will give us the main setup. Now, all we need to add is the actual menu inside the aside element.
+With those HTML elements we created necessary structure for the **sidenav**.
 
-For this, let's introduce an array of the pages we want to add.
+Now, all we need to add is the actual **navigation menu** inside the aside tag.
+
+For this, let's introduce an array of the pages we want to navigate to:
 
 ```js
 const menuItems = [
@@ -179,7 +190,7 @@ const menuItems = [
 ];
 ```
 
-Now inside our aside, we can loop over these elements and add a link for them.
+Inside our aside element, we can loop over these elements and add the href link to each page.
 
 ```html
 <aside className='bg-fuchsia-100 w-full md:w-60'>
@@ -203,9 +214,9 @@ Now inside our aside, we can loop over these elements and add a link for them.
 
 > Note: Don't forget to import `import Link from 'next/link';`
 
-The last thing we want to add is an active page. This should look slightly different so users can quickly see which page they are on.
+Finally, we want to add an *active page*. An active page should look slightly different, so the viewer sees on which page they are.
 
-For this, let's import the router and define a router variable.
+To create the active page, let's import the router and define a router variable.
 
 ```js
 import { useRouter } from 'next/router';
@@ -217,18 +228,21 @@ export default function Layout({ children }) {
 }
 ```
 
-Then inside our a href classes, we can add a dynamic check to see if this href is the active page.
+Then inside our a href classes, we can add a dynamic check to see if the current route is the active page.
 
 ```html
 ${router.asPath === href && 'bg-fuchsia-600 text-white'}
 ```
 
-And that's it. We now have a dynamic sidebar layout in Next.js!
+And that's it. We created a dynamic sidebar navigation in Next.js!
 
-This can be an excellent starter for your next project.
+Checkout the code we wrote and [view the navigation live here](https://stackblitz.com/~/github.com/dailydevtips/next-sidebar)
 
-You can find the completed code on [GitHub](https://github.com/rebelchris/next-sidebar).
+The sidenav is responsive and we could quickly style it with Tailwind.
+You can use this layout as a starter template for your next project.
+
+Find the complete code here on [GitHub](https://github.com/dailydevtips/next-sidebar).
 
 ### Thank you for reading, and let's connect!
 
-Thank you for reading my blog. Feel free to subscribe to my email newsletter and connect on [Facebook](https://www.facebook.com/DailyDevTipsBlog) or [Twitter](https://twitter.com/DailyDevTips1)
+Feel free to subscribe to my email newsletter and connect on [Facebook](https://www.facebook.com/DailyDevTipsBlog) or [Twitter](https://twitter.com/DailyDevTips1)
