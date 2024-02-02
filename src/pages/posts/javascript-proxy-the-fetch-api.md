@@ -1,31 +1,33 @@
 ---
 layout: ../../layouts/Post.astro
 title: 'JavaScript Proxy the Fetch API'
-metaTitle: 'JavaScript Proxy the Fetch API'
-metaDesc: "Let's see how we can proxy the Fetch API in JavaScript"
+metaTitle: 'JS Proxy with Fetch API [2024]'
+metaDesc: "JavaScript Proxy Object tutorial: Learn to use proxy for Fetch API in JS apps for enhanced functionality."
 ogImage: /images/11-07-2022.jpg
 image: https://daily-dev-tips.com/cdn-cgi/imagedelivery/Bki7Af2hq0JKVFw1XYYMQg/f86f933c-9854-4eea-ccd3-33f46bbebe00
 date: 2022-07-11T03:00:00.000Z
+modifiedDate: 2024-02-02T03:00:00.000Z
 tags:
   - javascript
 ---
 
-If you go on and google search for JavaScript Proxy, you'll see many articles explaining the core concepts.
+If you go on and google search for **JavaScript Proxy**, you'll see many articles explaining the core concepts.
 
-But there is one powerful thing almost nobody tells you about.
-That one thing is:
+But there is one powerful thing almost nobody tells you about:
 
-You can use Proxy to overwrite existing APIs!
+You can use the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank">Proxy object</a> to overwrite existing APIs!
 
-I know it makes sense. It can extend any object, array, or function, so it is logical. But let me explain by a real-world example in which I used the Proxy object.
+It can extend any object, array, or function, so it is logical. 
 
-## Extending the Fetch API with a Proxy
+So let me explain the solution by a real-world example in which I used the Proxy object.
 
-You have heard of the [Fetch API](https://daily-dev-tips.com/posts/fetch-api-in-vanilla-javascript/), a native wrapper to efficiently perform requests to URLs.
+## How to extend the JavaScript Fetch API with a Proxy
 
-Let's say our app has a file that handles all API calls, and they all use the Fetch API.
+You have heard of the [Fetch API](https://daily-dev-tips.com/posts/fetch-api-in-vanilla-javascript/) - a native wrapper to efficiently perform requests to URLs.
 
-An example, we got the following class to handle API calls for our Todos.
+Let's say our app has a file that handles all API calls, and they all use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank">Fetch API</a>.
+
+As an example, let's say we have the following class *TodoAPI* to handle API calls for todos:
 
 ```js
 class TodoAPI {
@@ -36,7 +38,7 @@ class TodoAPI {
 }
 ```
 
-To use it, we can use the following code.
+Now to use it, we can use the following code.
 
 ```js
 const API = new TodoAPI();
@@ -52,21 +54,21 @@ const API = new TodoAPI();
 })();
 ```
 
-Nothing crazy yet. We can call our API middleware which uses the fetch request.
+Nothing crazy yet. We can call our API middleware which uses the **fetch request**.
 
-This code works perfectly on our website, but when introducing it to a Chrome extension, we quickly notice we can't directly use the fetch method.
-CORS issues are blocking it as we inject it on different websites.
+This code works perfectly on our website, but when introducing it to a Chrome extension, we quickly notice we can't directly use the JS fetch API due to **CORS** issues with the browser. The browser blocks the requests as we inject the JS code on different websites.
 
-We should still accept all the Fetch request data but send it via a background worker.
+We should still accept all the Fetch API request data but rather send it via a background **service worker**.
 
-So one idea is to create a new function that mimics the Fetch API, which could work.
+So, another idea is to create a new function that mimics the Fetch API - which could work.
+
 But what happens when the Fetch API changes props?
 
-So a better way to tackle this is to leverage the Proxy object!
+A better way to tackle the problem is is to leverage the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank">Proxy object</a> in JavaScript!
 
-Yes, we can Proxy the Fetch API.
+Yes, we can **proxy the Fetch API**.
 
-In a super simple example, it would look like this:
+In a super simple example, the code would look like this:
 
 ```js
 (async () => {
@@ -84,18 +86,19 @@ In a super simple example, it would look like this:
 })();
 ```
 
-Let's see what's going on here.
-We create a proxy handler that accesses the apply trap.
-Then instead of performing the request, we log the arguments.
+Let's see what's going on here:
+- We create a **proxy handler** that accesses the apply trap.
+- Then instead of performing the API request, we log the arguments.
+- We then **proxy the fetch function** and apply our handlers.
+- Finally, we can use the code as proxied standard Fetch API!
 
-We then proxy the fetch function and apply our handlers.
-And then, we can use it as the standard Fetch API!
+The cool part about this, is that all the Fetch arguments stay the same, so there is no need to change any existing implementation formats.
 
-The cool part about this is that all the Fetch arguments stay the same, so there is no need to change any existing implementation formats.
+Now, let's move this into our function so we can switch between regular **fetch API** and **proxied fetch**!
 
-Now let's move this into our function that will become able to switch between regular fetch and our proxied fetch!
+### JavaScript Fetch API Proxy
 
-We first have to introduce a constructor in our class that will define which method of fetching we should use.
+We first have to introduce a **constructor** in our class that will define which method of fetching we should use.
 
 ```js
 constructor(fetchMethod = (...args) => fetch(...args)) {
@@ -103,7 +106,7 @@ constructor(fetchMethod = (...args) => fetch(...args)) {
 }
 ```
 
-This function can set the fetch method with all its arguments. By default, we set it to be `fetch`.
+The function will set the fetch method with all its arguments. By default, we set it to be `fetch`.
 
 Then we can modify our existing calls to use the preferred fetch method.
 
@@ -114,9 +117,9 @@ getTodos = async () =>
 
 As you can see, not much has changed. We moved `fetch.` to `this.fetchMethod.` and all our props and callbacks stay the same.
 
-However, the example still uses the regular old fetch.
+However, the example still uses the regular old fetch API.
 
-Let's set a new version to use a custom proxy fetch.
+Let's set a new version to use a **custom proxy fetch**.
 
 ```js
 const proxyFetch = {
@@ -136,11 +139,14 @@ const API = new TodoAPI(proxiedFetch);
 })();
 ```
 
-We create a new proxy fetch that, in our case console logs all requests and then returns that it's done.
+We create a new proxied fetch, that in our case logs all requests to the console and then returns 'proxy done'.
 
-Then we pass this proxied fetch version to our class so that it will use this one.
+Then we pass proxied fetch version to our class so that it will use it.
 
-Feel free to try it on this CodePen. You can switch between passing the proxied fetch or leaving it empty.
+### Demo
+Feel free to try it in this CodePen. 
+
+You can switch between passing the proxied fetch or leaving it empty and use the regular fetch API.
 
 <p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="ExEarjV" data-user="rebelchris" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/rebelchris/pen/ExEarjV">
@@ -149,9 +155,11 @@ Feel free to try it on this CodePen. You can switch between passing the proxied 
 </p>
 <script async defer src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
-## The background worker example
+## Fetch with a service worker in the background
 
-I described a background worker example for an extension, and we mock the fetch request to send all requests it receives via the browser runtime messages.
+I described a background service worker for the Chrome extension example. 
+
+Here we mock the fetch request to send all requests it receives via the browser runtime messages.
 
 The code looks like this:
 
@@ -170,16 +178,18 @@ const proxyFetch = {
 export const proxiedFetch = new Proxy(fetch, proxyFetch);
 ```
 
-As you can see, it's a similar concept as we saw in the main article.
-We proxy the existing fetch method but overwrite what it executes.
-In this example, we send a message to the browser runtime.
+As you can see, it's a similar concept as we saw in the beginning of the article.
+
+We proxy the existing fetch API method but overwrite what it executes.
+
+In this example, we then send a message to the browser runtime.
 
 ## Conclusion
 
-With the Proxy object, we can proxy existing APIs like, for instance, the Fetch API.
+With the **JavaScript Proxy object**, we can proxy existing APIs like the Fetch API.
 
-This can become super powerful as we don't have to mock the entire function but proxy it to do what we need.
+This is super powerful because we don't have to mock the entire function but proxy it to do what we need.
 
 ### Thank you for reading, and let's connect!
 
-Thank you for reading my blog. Feel free to subscribe to my email newsletter and connect on [Facebook](https://www.facebook.com/DailyDevTipsBlog) or [Twitter](https://twitter.com/DailyDevTips1)
+Feel free to subscribe to my email newsletter and connect on [Facebook](https://www.facebook.com/DailyDevTipsBlog) or [Twitter](https://twitter.com/DailyDevTips1)
