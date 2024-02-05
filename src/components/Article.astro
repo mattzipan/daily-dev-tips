@@ -21,7 +21,7 @@ const isCDNImage = (article.image?.indexOf("http") === 0);
     <p
       class="flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400"
     >
-      {dateFilter(article.date)} ·<svg
+      {dateFilter((article.modifiedDate||article.date))} ·<svg
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"
         class="w-5 h-5 ml-1 mr-1"
