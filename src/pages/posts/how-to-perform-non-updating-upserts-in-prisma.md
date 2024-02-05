@@ -16,11 +16,11 @@ If we were to add a playlist twice, however, we would notice that the URI is not
 ## What is an upsert
 Typically we could handle this with an <a href="https://www.prisma.io/docs/orm/prisma-client/queries/crud#update-or-create-records" target="_blank">upsert</a> operation. 
 
-An "upsert" in Prisma is a combination of "update" and "insert". 👀
+An "upsert" in Prisma is a combination of "update" and "insert".
 
 An upsert allows us to **update** an existing record if it's found, or **insert** a new record if it's not found, based on a **unique identifier**, such as the playlist URI in our example. 
 
-But for this example, I want to do a **non-updating upsert**. 
+But for this example, I want to do a **non-updating upsert**. 👀
 
 ### Non-updating upsert
 The goal is to **create a new record if it does not exist** already, without updating any existing records if they do exist.
