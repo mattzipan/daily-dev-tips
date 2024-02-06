@@ -1,20 +1,25 @@
 ---
 layout: ../../layouts/Post.astro
-title: 'JavaScript check if property exists in Object'
-metaTitle: 'JavaScript check if property exists in Object'
-metaDesc: 'How to check if a property exists in a Object with JavaScript'
+title: '3 Ways to Check a if Property exists in a JS Object'
+metaTitle: '3 Ways to Check if Property exists in JS Object [2024]'
+metaDesc: 'Step-by-step guide on checking for property existence in JS objects, featuring practical examples with console.log and exploring key-value relationships.'
 ogImage: /images/05-07-2022.jpg
 image: https://daily-dev-tips.com/cdn-cgi/imagedelivery/Bki7Af2hq0JKVFw1XYYMQg/e3a59344-1667-4edf-9366-e60fb3ae5900
 date: 2022-07-05T03:00:00.000Z
+modifiedDate: 2024-02-06T03:00:00.000Z
 tags:
   - javascript
 ---
 
-You might need to determine if an object holds a particular property.
+In **JavaScript**, some day you may need to **check if a property exists in an object**.
 
-Let's say we have a user object. Optionally the email property can be set. If not, we want to show a form so the user can fill out their email.
+Let's learn how to do this with below **example**.
 
-How can we determine if this field exists?
+## How to check if property exists in object?
+
+Let's say, we have a JS object for users with an optional property for email. 
+
+If the email **key** has no **value**, we want to show a form for the user to then add the email.
 
 ```js
 const userOne = {
@@ -27,13 +32,15 @@ const userTwo = {
 };
 ```
 
-And to answer that, there are several ways of doing that. Let's take a look at the three most common ones.
+There are several ways to check if a certain key has a value.
 
-## Using hasOwnProperty to see if an object has a property
+Let's take a look at the three most common methods.
 
-By using `hasOwnProperty` we can evaluate if an object has `Own` property.
+### 1. Use hasOwnProperty to see if an object has a property
 
-Let's see how it would work on our example data.
+By using the `hasOwnProperty` method, we can evaluate if an object has a property.
+
+Let's see how it would work with our example data and `console.log` the result:
 
 ```js
 console.log(userOne.hasOwnProperty('email'));
@@ -43,9 +50,9 @@ console.log(userTwo.hasOwnProperty('email'));
 // Returns: false
 ```
 
-That is perfect. But there is a catch to using this method. It only works for `Own` properties, not extended object properties.
+That is perfect. But there is a catch to using this method: This only works for `Own` properties, not extended object properties.
 
-As you may know, objects come with the `toString` method, and if we try to check if that exists, it will return false. (While this does exist)
+As you may know, objects come with the `toString` method, and if we try to check if that exists, it will return false (though it does exist)
 
 ```js
 console.log(userOne.toString());
@@ -54,12 +61,13 @@ console.log(userOne.toString());
 console.log(userOne.hasOwnProperty('toString'));
 // Returns false
 ```
+So this brings us to the next method:
 
-## Using in to see if an object has a property
+### 2. Using "in" operator to check for property existence
 
-Another more explicit way of checking if an object has a property is using `in`.
+Another more explicit way of checking if an object holds a property is using `in`.
 
-This one can check in own and inherited properties.
+This solution can check the **owned and inherited properties**.
 
 ```js
 console.log('email' in userOne);
@@ -72,9 +80,11 @@ console.log('toString' in userOne);
 // Returns: true
 ```
 
-## Using undefined to see if an object has a property
+### 3. Using undefined to check for property in obj
 
-The last method is to use an undefined check. This method will work for omitted properties but can cause you headaches if the property exists but has an undefined value.
+The last method is to use an `undefined` check. 
+
+This solution will work for **omitted properties** but can cause you headaches if the property exists but has an undefined value.
 
 ```js
 console.log(userOne.email !== undefined);
@@ -99,18 +109,18 @@ console.log(userThree.email !== undefined);
 // Returns: false
 ```
 
-The check is acceptable, but it's not what we might be looking for.
+The check is acceptable, because the property exists - but be aware of this behaviour.
 
 ## Conclusion
 
-When trying to find out if an object holds a particular property, we need to consider how safe we want to be.
+When trying to find out if an object holds a particular property, we need to consider how **safe** we want the **check** to be.
 
-I would generally not recommend using the `undefined` check.
+I would generally not recommend using the 3rd method, the `undefined` check.
 
-If you only evaluate `Own` properties, the `hasOwnProperty` is a solid solution.
+If you only evaluate `Own` properties, the `hasOwnProperty` is the solid solution.
 
-But you might want to be on the safe side and use the `in` check to determine if an object has a property.
+But you might want to be on the safe side and use the `in` check to determine if an object has a property - owned or inherited.
 
 ### Thank you for reading, and let's connect!
 
-Thank you for reading my blog. Feel free to subscribe to my email newsletter and connect on [Facebook](https://www.facebook.com/DailyDevTipsBlog) or [Twitter](https://twitter.com/DailyDevTips1)
+Feel free to subscribe to my email newsletter and connect on [Facebook](https://www.facebook.com/DailyDevTipsBlog) or [Twitter](https://twitter.com/DailyDevTips1)

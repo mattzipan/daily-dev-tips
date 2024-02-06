@@ -5,6 +5,7 @@ metaTitle: 'Astro recipe collection website - Part 1 Setup collections'
 metaDesc: 'How to render individual collection pages and paginate a collection in Astro'
 image: /images/12-08-2021.jpg
 date: 2021-08-12T03:00:00.000Z
+modifiedDate: 2024-02-06T03:00:00.000Z
 tags:
   - astro
 ---
@@ -126,7 +127,11 @@ const { content } = Astro.props;
 
 A super basic rendering will show the title, an image, and the content.
 
-Now we can run Astro.
+By the way, I actually learned that to optimize the <a href="https://il.ly/seo/title" target="_blank">SEO title</a>, it's best not have the same variable for both, page title and headline. You'll want flexibility later on optimizing your title tags independently from headlines. 
+
+I'm just keeping this tutorial simple.
+
+Let's continue and run Astro.
 
 ```bash
 npm start
