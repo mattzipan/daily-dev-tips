@@ -1,39 +1,55 @@
 ---
 layout: ../../layouts/Post.astro
-title: 'CSS Logos: React logo'
-metaTitle: 'CSS Logos: React logo'
-metaDesc: 'Creating the React atom logo with only one div in CSS'
+title: 'React Logo CSS only'
+metaTitle: 'ReactJS Logo in Pure CSS with Animation [2024]'
+metaDesc: 'Animating the React logo in CSS: Dive into this example where we use a single div to bring the ReactJS logo to life with animations.'
 image: /images/26-03-2022.jpg
 date: 2022-03-26T03:00:00.000Z
+dateModified: 2024-02-06T03:00:00.000Z
 tags:
   - css
   - css-logos
 ---
 
-I'm sure you have seen the React (atom-like) logo before, but as a reminder, this is what it looks like:
+I'm sure you have seen the **React JS logo** before, but as a reminder, this is what it looks like as **PNG-image**:
 
-![React Logo](https://cdn.hashnode.com/res/hashnode/image/upload/v1647490619965/P1dsNgj-f1.png)
+![React Logo image png](https://cdn.hashnode.com/res/hashnode/image/upload/v1647490619965/P1dsNgj-f1.png)
 
-## Analysing the logo
+In today's **tutorial** you'll learn to **recreate the React JS logo with pure CSS**. ✨
 
-The logo consists of three ellipses that form around a ball.
+This is what the result will look like:
 
-I want to challenge myself and try to create this as a single div artwork.
+<p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="VwyvOWy" data-user="rebelchris" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/rebelchris/pen/VwyvOWy">
+  Untitled</a> by Chris Bongers (<a href="https://codepen.io/rebelchris">@rebelchris</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async defer src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
-We should be able to use the `before` and `after` pseudo-elements to create two of the lines.
+Let's get started!
+
+## Reactjs Logo style analysis
+
+The ReactJS logo consists of three ellipses in orbit around a ball - like an atom.
+
+I want to challenge myself and try to create this as a single div artwork, ensuring it follows responsive design principles..
+
+We should be able to use the `before` and `after` pseudo-elements to create two of the lines making the icon recognizable.
 Then the main div can hold the dot and the third line.
 
-Since this is a little bit simpler, we'll also animate the logo, so you get to experience CSS animations.
+Since this is a little bit simpler, we'll also **animate** the logo, so you get to experience CSS animations.
 
-## Recreating the React logo in CSS
+## How to make the React logo in CSS
 
-Let's get started and create the single div element.
+Let's get started and create a single **div HTML-element** with a CSS class `react`.
 
 ```html
 <div class="react"></div>
 ```
 
-Let's also look into an excellent concept in processed CSS called `@extend` I'll be using [`SCSS`](https://daily-dev-tips.com/posts/scss-introduction/) as we have a lot of recurring elements that we can quickly share between selectors.
+Let's also look into an excellent concept in processed CSS called `@extend`.
+
+I'll be using [`SCSS`](https://daily-dev-tips.com/posts/scss-introduction/) as we have a lot of recurring elements that we can quickly share between selectors.
 
 > Note: You can still use CSS, copy-paste the main element instead of using `@extend`
 
@@ -49,7 +65,7 @@ We'll start by creating the orbit class.
 ```
 
 This code is not used anywhere now.
-But we can quickly add all these classes to our main div element like this.
+But we can quickly add all these CSS styles to our div element like this.
 
 ```css
 .react {
@@ -59,16 +75,17 @@ But we can quickly add all these classes to our main div element like this.
 
 At this point, we have the primary orbit in place.
 
-![Main orbit ring](https://cdn.hashnode.com/res/hashnode/image/upload/v1647491630618/EPYKnxryi.png)
+![React js orbit ring](https://cdn.hashnode.com/res/hashnode/image/upload/v1647491630618/EPYKnxryi.png)
 
-Before we add the other two orbit rings, let's first look at how we can add the dot in the center.
-This will have to be a background on this main element.
+Before we add the other two orbit rings, let's first look at how we can add the ball in the center. 👀
 
-But we don't want to fill the whole thing.
+The ball will have to be a background on the main element.
+
+But we don't want to fill the whole background, in fact the rest should stay **transparent**.
 And we can leverage a radial gradient for this!
 
 We saw a similar concept in the [Dev.to logo](https://daily-dev-tips.com/posts/css-logos-dev-logo/) where we had hard stops.
-By using transparent stops, we can set the center color.
+By using **transparent background stops**, we can set the center color.
 
 ```css
 .react {
@@ -77,7 +94,8 @@ By using transparent stops, we can set the center color.
 }
 ```
 
-As you can see, we start the gradient set to a circle at 15%, which will fill with the React blue.
+As you can see, we start the gradient set to a circle at 15%, which will fill with the React blue color.
+
 And then, we transition to transparent from 15% onwards.
 
 ![Atom + ring in CSS](https://cdn.hashnode.com/res/hashnode/image/upload/v1647491908289/HkD_2FIXc.png)
@@ -116,11 +134,11 @@ And then, we can rotate each element a bit differently.
 
 By now, we have our react logo as intended.
 
-![Full React logo in CSS](https://cdn.hashnode.com/res/hashnode/image/upload/v1647492266631/rH6yDfWyJ.png)
+![React logo in CSS as png](https://cdn.hashnode.com/res/hashnode/image/upload/v1647492266631/rH6yDfWyJ.png)
 
-The last thing we wanted to add was the animation. The original logo can rotate around the orb.
+The last thing we wanted to add is the **React logo animation**. The original logo rotates around the orb.
 
-Let's add a rotate animation to the main element.
+Let's add a **rotation animation** to the main element.
 
 ```css
 .react {
@@ -147,15 +165,16 @@ The animation itself (named `rotate`) we can add like this:
 
 We say, animate `to` rotate exactly one turn (which equals 360 degrees).
 
-And there you go, a one-div CSS React logo that animates.
+And there you go, a one-div CSS React logo that animates. ✨
+
+## CodePen Demo
 
 <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="VwyvOWy" data-user="rebelchris" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/rebelchris/pen/VwyvOWy">
   Untitled</a> by Chris Bongers (<a href="https://codepen.io/rebelchris">@rebelchris</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
-<script async defer src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
 ### Thank you for reading, and let's connect!
 
-Thank you for reading my blog. Feel free to subscribe to my email newsletter and connect on [Facebook](https://www.facebook.com/DailyDevTipsBlog) or [Twitter](https://twitter.com/DailyDevTips1)
+Feel free to subscribe to my email newsletter and connect on [Facebook](https://www.facebook.com/DailyDevTipsBlog) or [Twitter](https://twitter.com/DailyDevTips1)
