@@ -43,7 +43,7 @@ So what happens if we have an update where we allow all of the fields to be opti
 
 This could be if we had a UI where each field would auto-update without knowing the other fields.
 
-I'll call our function for this `updateUserField`, which would accept any user fields and use the `Partial`:.
+I'll call our function for this `updateUserField`, which would accept any user fields and use the `Partial`:
 
 ```js
 const updateUserField = (id: number, fieldsToUpdate: Partial<User>) => {
