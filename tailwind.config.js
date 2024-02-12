@@ -11,6 +11,7 @@ module.exports = {
     extend: {
       aspectRatio: {
         19: '1.91',
+        191: '19:1'
       },
       colors: {
         barbie: '#DA0060',
@@ -49,6 +50,5 @@ module.exports = {
   content: ['./public/**/*.html', './src/**/*.{astro,js,jsx,ts,tsx,vue}'],
   plugins: [
     require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio'),
   ],
 };
