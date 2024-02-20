@@ -20,3 +20,5 @@ snowpack.config.mjs
 
 # cache
 _cache/
+_cache/subscribers.json
+_cache/webmentions.json
