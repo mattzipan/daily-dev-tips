@@ -114,4 +114,27 @@ The tool itself is one of the best UI's for MySQL I've personally seen.
 
 ### Thank you for reading, and let's connect!
 
+
+## 6 Sequel Ace
+
+Sequel Ace is the successor of Sequel Pro and just like Sequel Pro is MySQL client for Mac, it brings back all the goodies of Sequel Pro. So if you used to work with Sequel Pro and you loved it welcome back home.
+
+The tool itself is one of the best UI's for MySQL I've personally seen.
+
+<img src="https://daily-dev-tips.com/cdn-cgi/imagedelivery/Bki7Af2hq0JKVFw1XYYMQg/d2a3a90d-1fdb-4632-3c55-91b2376dbe00/article" alt="Sequel Pro MySQL client for Mac" width="750" height="500" />
+
+#### PROS
+
+- Very clear UI
+- Easy to understand and use
+- It supports Dark mode
+
+#### CONS
+
+- Still looking but i have not found one 
+
+[Download Sequel Ace](https://sequel-ace.com/)
+
+### Thank you for reading, and let's connect!
+
 Thank you for reading my blog. Feel free to subscribe to my email newsletter and connect on [Facebook](https://www.facebook.com/DailyDevTipsBlog) or [Twitter](https://twitter.com/DailyDevTips1)
