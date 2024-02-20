@@ -3,18 +3,15 @@ async function load() {
 
   const getPost = async (key) => {
     const url = key.replace('../pages/', '/').replace('.md', '/');
-    const awaitedPost = await fetchedPosts[key].default();
-    const item = { ...awaitedPost.props.frontmatter, url, key };
-    return item;
+    const awaitedPost = await fetchedPosts[key];
+    return {...awaitedPost.frontmatter, url, key };
   };
 
   const mappedPosts = Object.keys(fetchedPosts).map((key) => {
-    const awaitedPost = getPost(key);
-    return awaitedPost;
+    return getPost(key);
   });
 
-  const results = await Promise.all(mappedPosts);
-  return results;
+  return await Promise.all(mappedPosts);
 }
 
 let _posts;
