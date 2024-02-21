@@ -42,9 +42,9 @@ Once it's installed, you can go over to your Docker desktop and see it already t
 
 You can also spool the dashboard by running `kubectl proxy` and visiting the following URL.
 
-<pre>
+```plaintext
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
-</pre>
+```
 
 However, it will prompt you with a login like the one below, and we don't have any way of logging in yet.
 

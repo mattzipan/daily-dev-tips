@@ -57,9 +57,9 @@ It's good to note that this also supports the import of facets!
 
 How it works is that you define `variantFacets` as a column, and inside, you can column deliminate all the values like so:
 
-<pre>
+```plaintext
 test:Foo|test:Bar
-</pre>
+```
 
 This would add both the `Foo` and the `Bar` value.
 The `test` part is the code of the facet that we created.

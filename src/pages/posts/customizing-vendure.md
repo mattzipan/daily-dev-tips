@@ -55,15 +55,15 @@ So let's take the first example as the [Vendure docs](https://www.vendure.io/doc
 
 Currently, we would have the following state:
 
-<pre>
+```plaintext
 AddingItems > ArrangingPayment
-</pre>
+```
 
 We want it to be:
 
-<pre>
+```plaintext
 AddingItems > ValidateCustomer > ArrangingPayment
-</pre>
+```
 
 The first thing we need to do is define a new state. This is a physical text and doesn't do anything yet.
 
