@@ -1,10 +1,11 @@
 ---
 layout: ../../layouts/Post.astro
-title: '9 Google Analytics privacy focussed alternatives'
-metaTitle: '9 Google Analytics privacy focussed alternatives'
+title: '9 Google Analytics Alternatives for Privacy'
+metaTitle: '9 Google Analytics Alternatives for Privacy [2024]'
 metaDesc: 'Here are 9 privacy focussed alternatives to Google Analytics'
 image: /images/18-03-2022.jpg
 date: 2022-03-18T03:00:00.000Z
+modifiedDate: 2024-02-28T03:00:00.000Z
 tags:
   - developer
 ---
@@ -17,10 +18,10 @@ This has to do with GPDR rulings and Google Analytics transmitting personal data
 
 You can check the countries where Google Analytics is illegal here: [isgoogleanalyticsillegal.com](https://isgoogleanalyticsillegal.com/).
 
-I was a big user of Google Analytics because it works and it's easy, but I knew it wasn't right.
-And I was getting more and more annoyed by the fact that Google was benefiting so much from the data of people I was trying to help.
+As a user of **Google Analytics** I found **GA4** worked and it was easy enough, but I knew it wasn’t right: I was getting more and more annoyed by the fact that Google was benefiting so much from the user data of people I was trying to help.
+So together with a friend who actually is a <a href="https://bluerivermountains.com/en/google-analytics-freelancer" target="_blank">freelancer for web analytics</a>, we went through the available **Google Analytics alternatives for privacy**.
 
-It was not worth having such a useless vanity metric on Google when there are many great and privacy-focused alternatives.
+Looking back, it was not worth having such a useless vanity metric on Google when there are many great and privacy-focused alternatives.
 
 In this article, I'll review alternatives you can use instead of Google Analytics.
 

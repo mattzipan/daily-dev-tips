@@ -5,6 +5,7 @@ metaTitle: 'What exactly is Frontmatter?'
 metaDesc: 'What is Frontmatter and how can you use it in Markdown files'
 image: /images/16-05-2022.jpg
 date: 2022-05-16T03:00:00.000Z
+modifiedDate: 2024-03-03T03:00:00.000Z
 tags:
   - markdown
 ---
