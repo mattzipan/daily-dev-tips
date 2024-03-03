@@ -121,7 +121,9 @@ string
 
 ## Conclusion
 
-Frontmatter is a super intuitive way of making your Markdown files contain some metadata.
+Frontmatter is a super intuitive way of making your Markdown files contain some metadata - a cornerstone for SEO. Frontmatter renders MDX properties like tags to enhance your categories & content.
+
+To further enhance your website content, explore <a href="https://storychief.io/blog/seo-tools" target="_blank">SEO tools</a> that provide detailed guidance on what to include and what to avoid in your content.
 
 It can enhance your SEO, Website data and even render proper MDX properties.
 
