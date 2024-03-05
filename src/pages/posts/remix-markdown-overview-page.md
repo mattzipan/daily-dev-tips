@@ -1,10 +1,11 @@
 ---
 layout: ../../layouts/Post.astro
 title: 'Remix Markdown overview page'
-metaTitle: 'Remix Markdown overview page'
+metaTitle: 'Remix Markdown overview page [2024]'
 metaDesc: 'Adding a Markdown overview page to our Remix blog'
 image: /images/14-05-2022.jpg
 date: 2022-05-14T03:00:00.000Z
+modifiedDate: 2024-03-05T03:00:00.000Z
 tags:
   - remix
 ---
@@ -44,7 +45,7 @@ function postFromModule(mod) {
 }
 ```
 
-This function will return the slug and all frontmatter parts of the file.
+This function will return the slug and all [frontmatter](https://daily-dev-tips.com/posts/what-exactly-is-frontmatter/) parts of the file.
 The frontmatter section is everything within the three dashes at the top of the file.
 
 Then we can use the Remix loader to actually load these pages.

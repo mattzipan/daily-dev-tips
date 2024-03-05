@@ -5,6 +5,7 @@ metaTitle: 'Astro getting related articles based on tags'
 metaDesc: 'How to load related articles in Astro based on tags'
 image: /images/17-03-2022.jpg
 date: 2022-03-17T03:00:00.000Z
+modifiedDate: 2024-03-05T03:00:00.000Z
 tags:
   - astro
 ---
@@ -21,7 +22,8 @@ The first thing we'll do is make a simple use case. We want to showcase the two 
 
 Create a component called `RelatedArticles.astro` in your component directory.
 
-In the frontmatter section, we'll start by loading all our posts.
+In the [frontmatter](https://daily-dev-tips.com/posts/what-exactly-is-frontmatter/) section, we'll start by loading all our posts.
+
 It's important to note `fetchContent` won't work here as it will cause an infinite loop.
 
 ```js

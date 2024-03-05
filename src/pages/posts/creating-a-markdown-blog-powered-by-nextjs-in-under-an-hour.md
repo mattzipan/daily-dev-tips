@@ -1,10 +1,11 @@
 ---
 layout: ../../layouts/Post.astro
 title: 'Creating a Markdown Blog Powered by Next.js in Under an Hour'
-metaTitle: 'Creating a Markdown Blog Powered by Next.js in Under an Hour'
-metaDesc: 'How to load markdown pages in Next.js a full-blown tutorial [2022]'
+metaTitle: 'How to Next.js Markdown Blog in UNDER 1hr [2024]'
+metaDesc: 'How to load markdown pages in Next.js a full-blown tutorial'
 image: /images/01-02-2022.jpg
 date: 2022-02-01T03:00:00.000Z
+modifiedDate: 2024-03-05T03:00:00.000Z
 tags:
   - nextjs
 ---
@@ -200,7 +201,7 @@ One example of my articles looks like this: `nextjs-page-options-and-how-they-wo
 
 Then inside the file you have two section.
 
-The top part, called `frontmatter` it's a way to add non-rendered elements to your post.
+The top part, called [frontmatter](https://daily-dev-tips.com/posts/what-exactly-is-frontmatter/) it's a way to add non-rendered elements to your post.
 
 They are divided by three dashes.
 And below that is all your content that you want.

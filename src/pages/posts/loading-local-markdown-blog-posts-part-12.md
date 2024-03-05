@@ -6,6 +6,7 @@ metaDesc: 'Loading blog posts from local markdown files in Next.js'
 ogImage: /images/19-10-2022.jpg
 image: https://daily-dev-tips.com/cdn-cgi/imagedelivery/Bki7Af2hq0JKVFw1XYYMQg/b60154ba-6d4f-45a0-a43c-aa7c3f93cc00
 date: 2022-10-19T03:00:00.000Z
+modifiedDate: 2024-03-05T03:00:00.000Z
 tags:
   - nextjs
 ---
@@ -77,7 +78,7 @@ npm i gray-matter
 ```
 
 Then we can modify the static props to read from our local filesystem and fetch all posts.
-We return the slug for this post and the frontmatter part.
+We return the slug for this post and the [frontmatter](https://daily-dev-tips.com/posts/what-exactly-is-frontmatter/) part.
 
 ```js
 export async function getStaticProps() {

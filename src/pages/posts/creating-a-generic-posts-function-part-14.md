@@ -6,6 +6,7 @@ metaDesc: 'Modifying our posts calls to one generic reusable function'
 ogImage: /images/21-10-2022.jpg
 image: https://daily-dev-tips.com/cdn-cgi/imagedelivery/Bki7Af2hq0JKVFw1XYYMQg/50be4973-edf9-4953-5ca1-a89ffd4e8300
 date: 2022-10-21T03:00:00.000Z
+modifiedDate: 2024-03-05T03:00:00.000Z
 tags:
   - nextjs
 ---
@@ -52,7 +53,7 @@ export function getAllPosts() {
 ```
 
 The only thing I added is a sort based on the date.
-This way, we always show the newest articles first.
+This way, by sorting the posts based on the date in the [frontmatter](https://daily-dev-tips.com/posts/what-exactly-is-frontmatter/), we always show the newest articles first.
 
 As mentioned, the rest is a copy-paste from what we already had.
 

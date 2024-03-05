@@ -6,6 +6,7 @@ metaDesc: 'Creating the individual blog pages powered by markdown format'
 ogImage: /images/20-10-2022.jpg
 image: https://daily-dev-tips.com/cdn-cgi/imagedelivery/Bki7Af2hq0JKVFw1XYYMQg/4131fca0-f7dd-4645-10a8-5c391f4fe400
 date: 2022-10-20T03:00:00.000Z
+modifiedDate: 2024-03-05T03:00:00.000Z
 tags:
   - nextjs
 ---
@@ -63,7 +64,7 @@ export async function getStaticPaths() {
 As with the blog overview page, we need to read all our files from the posts directory.
 We then map them with their filenames, which means a path with the slug will be valid for each file.
 
-With the individual request, we need to extract both the frontmatter parts and the page's actual content.
+With the individual request, we need to extract both the [frontmatter](https://daily-dev-tips.com/posts/what-exactly-is-frontmatter/) parts and the page's actual content.
 
 ```js
 import fs from 'fs';

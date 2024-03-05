@@ -5,6 +5,7 @@ metaTitle: 'Reusable modal component in Astro'
 metaDesc: 'Creating a reusable modal component in Astro'
 image: /images/02-11-2021.jpg
 date: 2021-11-02T03:00:00.000Z
+modifiedDate: 2024-03-05T03:00:00.000Z
 tags:
   - astro
 ---
@@ -68,7 +69,7 @@ As you can see, we pass the ID as the unique ID for this dialog element. With th
 Then we pass a slot for the main content. (More on the slots in a bit)
 And we add a form with a close slot. This is needed because a native dialog will close when a button inside this dialog form is pressed. (The `method="dialog"` is key here).
 
-The last thing we want to add under our frontmatter is some basic styling.
+The last thing we want to add under our [frontmatter](https://daily-dev-tips.com/posts/what-exactly-is-frontmatter/) is some basic styling.
 
 ```html
 <style lang="scss">
