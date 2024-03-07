@@ -1,10 +1,11 @@
 ---
 layout: ../../layouts/Post.astro
 title: 'Adding a sitemap in Eleventy'
-metaTitle: 'Add site map to Eleventy Website Tutorial [2022]'
+metaTitle: 'Add a Sitemap to Eleventy [2024 Tutorial]'
 metaDesc: 'Learn in this tutorial how to add an XML sitemap file and robots.txt to an Eleventy blog. See the code examples in the Github repo!'
 image: /images/29-01-2021.jpg
 date: 2021-01-29T03:00:00.000Z
+modifiedDate: 2024-03-06T03:00:00.000Z
 tags:
   - eleventy
 ---
@@ -177,7 +178,7 @@ Allow: /
 Sitemap: https://thetodoist.com/sitemap.xml
 ```
 
-And this is how you create a sitemap for an Eleventy blog. After the indexation, perform an internet search and see if you can find your pages in the search results!
+And this is how you create a sitemap for an Eleventy blog. You'll then want to <a href="https://www.yuurrific.com/seo/submit-sitemap-google" target="_blank">submit the sitemap</a> in Google Search Console. After the indexation, perform an internet search and see if you can find your pages in the search results!
 
 If you follow the series, you can find the full code in this [GitHub repo](https://github.com/rebelchris/eleventy-todoist/tree/part8).
 
