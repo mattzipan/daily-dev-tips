@@ -5,6 +5,7 @@ metaTitle: 'May the 4th be with you'
 metaDesc: "Let's make this a 4th of May to not forget"
 image: /images/04-05-2022.jpg
 date: 2022-05-04T03:00:00.000Z
+modifiedDate: 2024-05-25T03:00:00.000Z
 tags:
   - developer
 ---
@@ -29,6 +30,8 @@ So I decided to take the day to write a technical article.
 And wishing all of you a wonderful 4th of May.
 
 Let us remember that there are bigger things in life than working 24/7, and we should also take some time off to spend quality time with our loved ones.
+
+Let us remember that there are bigger things in life than development, <a href="https://snowmaddigital.com/seo-for-wedding-venues/" target="_blank">SEO</a> & marketing 24/7, and that we should take some time off to spend quality time with our loved ones.
 
 ## We don't believe you
 
