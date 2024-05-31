@@ -4,7 +4,9 @@
 
 ## About
 
-Hey there 👋 I'm Chris Bongers a full-stack remote web developer with 15+ years of experience, and I'll help you become a web developer with bite-sized dev tips.
+Hey there, I am Graham and I have just taken over the daily dev tips site from Chris Bongers.
+
+Over the coming weeks I will be transitioning the site to be focused on content curation, sharing interesting articles and development news.
 
 ## Live website
 
